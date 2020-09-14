@@ -5,3 +5,4 @@ This application will be using firebase for storage and message and user handlei
 And coded in redux and react with semanticUI 
 
 I will be adding full support for media and emojis and user custimization and VoIP 
+
