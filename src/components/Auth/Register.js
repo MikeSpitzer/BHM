@@ -1,25 +1,27 @@
-import React from 'react';
-import firebase from '../../firebase';
-import { Grid, 
-    Form, 
-    Segment, 
-    Button, 
-    Header, 
-    Message, 
-    Icon } from 'semantic-ui-react';
-import { Link } from 'react-router-dom';
+import React from "react";
+import firebase from "../../firebase";
+import { 
+  Grid, 
+  Form, 
+  Segment, 
+  Button, 
+  Header, 
+  Message, 
+  Icon 
+} from "semantic-ui-react";
+import { Link } from "react-router-dom";
 
 class Register extends React.Component {
     state={
-        username: '',
-        email: '',
-        password: '',
+        username: "",
+        email: "",
+        password: "",
         passwordConfirmation: ""
     };
     
     handleChnage= event => {
        this.setState({ [event.target.name]: event.target.value });
-    }
+    };
 
     handleSubmit = event => {
         event.preventDefault();
@@ -43,47 +45,65 @@ class Register extends React.Component {
            <Grid textAlign="center" verticalAlign="middle" className="app">
                <Grid.Column style={{ maxWidth: 450 }}>
                    <Header as= "h2" icon color="red" textAlign="center">
-                   <icon name="Puzzle" color="Red" />
+                   <Icon name="puzzle piece" color="red" />
                     Register for BloodHaze
                    </Header>
-                   <Form onSubmit={this.hanleSubmit} size="large">
+                   <Form onSubmit={this.handleSubmit} size="large">
                       <Segment stacked>
-                          <Form.Input fluid name="username" 
-                          icon="user" iconPosition="left"
+                          <Form.Input 
+                          fluid 
+                          name="username" 
+                          icon="user" 
+                          iconPosition="left"
                           placeholder="Username" 
                           onChange={this.handleChnage} 
                           value={username}
-                          type="text" />
+                          type="text"
+                          />
 
-                          <Form.Input fluid name="email" icon="mail" 
+                          <Form.Input 
+                          fluid 
+                          name="email" 
+                          icon="mail" 
                           iconPosition="left"
                           placeholder="Email Address" 
                           onChange={this.handleChnage} 
                           value={email}
-                          type="email" />
+                          type="email" 
+                          />
 
-                          <Form.Input fluid name="password" 
-                          icon="lock" iconPosition="left"
+                          <Form.Input 
+                          fluid 
+                          name="password" 
+                          icon="lock" 
+                          iconPosition="left"
                           placeholder="Password" 
                           onChange={this.handleChnage} 
                           value={password}
-                          type="password" />
+                          type="password"
+                          />
 
-                          <Form.Input fluid name="passwordConfirmation" 
-                          icon="repeat" iconPosition="left"
+                          <Form.Input 
+                          fluid 
+                          name="passwordConfirmation" 
+                          icon="repeat" 
+                          iconPosition="left"
                           placeholder="Password Confirmation" 
                           onChange={this.handleChnage} 
                           value={passwordConfirmation}
-                          type="password" /> 
+                          type="password"
+                           /> 
 
-                          <Button color="red" fluid size="large">Submit</Button>
+                          <Button color="red" fluid size="large">
+                          Submit
+                          </Button>
                       </Segment> 
                    </Form>
-                   <Message>Already a user?  <Link to="/login">Login</Link></Message>
-                    
-               </Grid.Column>
+                   <Message>Already a user?  <Link to="/login">Login</Link>
+                   </Message>
+                </Grid.Column>
            </Grid>
-        )
+        );
     }
 }
 
